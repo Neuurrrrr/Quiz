@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Knowledge Quiz!</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+h1 {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+b {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+input {
+    font-family: fantasy;
+    border-radius: 10px;
+    color: dodgerblue;
+}
+h3 {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+    </style>
+</head>
+<body>
+    <h1>Quiz Questions</h1>
+
+<p>
+
+<form name="quiz">
+
+<p>
+
+<b>Question 1.
+
+<br>In what country is it considered a compliment to slurp loudly while eating soup?<br></b>
+<blockquote>
+<input type="radio" name="q1" value="Russia">Russia<br>
+<input type="radio" name="q1" value="Japan">Japan<br>
+<input type="radio" name="q1" value="Colombia">Colombia<br>
+</blockquote>
+
+<p><b>
+
+<hr>
+
+Question 2.
+
+<br>You are in Amman, Jordan, and you are invited to go to the souk. Where will you be going?<br></b>
+<blockquote>
+<input type="radio" name="q2" value="Mosque">Mosque<br>
+<input type="radio" name="q2" value="Market">Market<br>
+<input type="radio" name="q2" value="Park">Park<br>
+</blockquote>
+<p><b>
+
+<hr>
+
+Question 3.
+
+<br>In which country would showing up half an hour late for an invitation be considered rude?<br></b>
+<blockquote>
+<input type="radio" name="q3" value="Guinea">Guinea<br>
+<input type="radio" name="q3" value="Panama">Panama<br>
+<input type="radio" name="q3" value="Switzerland">Switzerland<br>
+</blockquote>
+<p><b>
+
+<hr>
+
+Question 4.
+
+<br>In which country would you expect to see students knock on their desks after a particularly good lecture or presentation?<br></b>
+<blockquote>
+<input type="radio" name="q4" value="Germany">Germany<br>
+<input type="radio" name="q4" value="Uganda">Uganda<br>
+<input type="radio" name="q4" value="Thailand">Thailand<br>
+</blockquote>
+<p><b>
+
+<hr>
+
+Question 5.
+
+<br>Which is the most populated country in the entire world?<br></b>
+<blockquote>
+<input type="radio" name="q5" value="India">India<br>
+<input type="radio" name="q5" value="China">China<br>
+<input type="radio" name="q5" value="Pakistan">Pakistan<br>
+</blockquote>
+<p><b>
+
+<hr>
+
+<input type="button"value="Grade Me"onClick="getScore(this.form);">
+
+<input type="reset" value="Clear"><p>
+
+Your mark out of 5 = <input type= text size 15 name= "mark" placeholder="Marks">
+
+Score in % = <input type=text size=15 name="percentage" placeholder="Percentage"><br>
+
+</form>
+
+<p>
+
+<form method="post" name="Form" onsubmit="" action="">
+
+</form>
+
+</body>
+
+<script>
+
+var numQues = 5;
+
+var numChoi = 3;
+
+var answers = new Array(9);
+
+answers[0] = "Japan";
+answers[1] = "Market";
+answers[2] = "Switzerland";
+answers[3] = "Germany";
+answers[4] = "China";
+
+function getScore(form) {
+
+var score = 0;
+
+var currElt;
+
+var currSelection;
+
+for (i=0; i<numQues; i++) {
+
+currElt = i*numChoi;
+
+answered=false;
+
+for (j=0; j<numChoi; j++) {
+
+currSelection = form.elements[currElt + j];
+
+if (currSelection.checked) {
+
+answered=true;
+
+if (currSelection.value == answers[i]) {
+
+score++;
+
+break;
+
+}
+
+}
+
+}
+
+if (answered ===false){alert("Do answer all the questions, Please") ;return false;}
+
+}
+
+var scoreper = Math.round(score/numQues*100);
+
+form.percentage.value = scoreper + "%";
+
+form.mark.value=score;
+
+}
+</script>
+<br><br><h3>Done by- Tazbeen</h3>
+</html>
+</body>
+</html>
